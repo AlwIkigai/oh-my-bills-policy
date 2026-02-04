@@ -21,5 +21,5 @@ Oh, My Bills does not provide financial advice.
 All calculations are informational only.
 
 ## Contact
-If you have questions about this policy, contact:
-syedahmadalwi@live.com.sg
+If you have questions about this policy, contact:  
+support@alwikigai.com
