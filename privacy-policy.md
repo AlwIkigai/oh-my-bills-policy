@@ -14,7 +14,8 @@ The App does not share your data with third parties.
 No analytics, advertising, or tracking services are used.
 
 ## Internet Usage
-The App does not require an internet connection to function.
+The App does not require an internet connection to function for its core features.
+The app may contact Expo servers only when you choose to check for updates. No personal or financial data is sent.
 
 ## Financial Disclaimer
 Oh, My Bills does not provide financial advice.
