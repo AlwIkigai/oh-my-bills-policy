@@ -1,6 +1,6 @@
 # Oh, My Bills! Privacy Policy
 
-**Effective date:** 1 October 2026
+**Effective date:** 5 October 2026
 
 Oh, My Bills! is a private, offline-first bill and liability visibility app. It does not require an account or login and does not include advertising or an Oh, My Bills!-operated analytics or behavioural-tracking service.
 
@@ -35,6 +35,8 @@ A screenshot is treated as bill-entry evidence, not proof that a payment settled
 ## User control and confirmation
 
 Bill Assistant suggestions do not change your saved bills by themselves.
+
+For recurring-bill discovery, you can explicitly create a new recurring category, add a new detail under an existing recurring category, map a discovered merchant to an existing detail, or ignore the suggestion. Oh, My Bills! does not automatically merge a discovered merchant into an existing recurring category or detail based only on a fuzzy match.
 
 Oh, My Bills! does not automatically create or update a bill, change an amount, update a recurring template during payment reconciliation, or mark a bill paid. You review and confirm each change.
 
