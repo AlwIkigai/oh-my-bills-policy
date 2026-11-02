@@ -1,67 +1,61 @@
 # Oh, My Bills! Privacy Policy
 
-**Effective date:** 5 October 2026
+**Last updated:** 2 November 2026
 
-Oh, My Bills! is a private, offline-first bill and liability visibility app. It does not require an account or login and does not include advertising or an Oh, My Bills!-operated analytics or behavioural-tracking service.
+Oh, My Bills! is an offline-first bill and expense planning application. It does not require an account or login, provide a bank connection, or operate an advertising or behavioural analytics service. Core bill planning and file analysis are designed to run on your device.
 
 ## Data stored on your device
 
-Bills, recurring-bill templates, preferences, snapshot history, tutorial status, and Bill Assistant matching metadata are stored locally on your device.
+The app locally stores information needed for its features, including bills and expenses, recurring schedules, preferences, saved financial outlooks, and Bill Assistant matching records.
 
-Matching metadata may include an opaque salted account scope, opaque transaction fingerprint, normalized merchant key, transaction amount and date, confirmed-match details, and the time of the latest payment check. This helps keep multiple accounts distinct, avoid matching the same payment twice, and improve later matching without retaining the real account number.
+Local matching records may include a salted opaque account scope, transaction fingerprint, merchant name or normalized key, payment amount, date, currency, status, confirmed matches, and the most recent payment check. Account labels or merchant descriptions might contain personal information depending on what is included in the imported file.
 
-Oh, My Bills! does not operate a bank connection or application backend and does not upload your bill, transaction, or screenshot information to an Oh, My Bills! server.
+**Unfinished reviews may also remain on your device between sessions.** Recurring-bill discovery can save suggested merchants, observed months, amounts, and normalized payment evidence while you review them. Missing-bill or payment reviews can save merchant descriptions, amounts, dates, payment evidence, and your review choices. This allows an unfinished review to be resumed. Such information is not limited to confirmed bill fields.
 
-## DBS/POSB CSV imports
+Financial information is stored in the app's local storage under the protections offered by your device operating system. The app does not currently provide a separate app-level encryption layer for all locally saved financial records. Whether local app data is included in device backups depends on your platform and backup configuration; OMB does not run its own cloud backup or financial-data synchronization service.
 
-Bill Assistant reads DBS/POSB CSV files only after you select them.
+## Bank CSV imports and local processing
 
-Historical exports can be used to suggest recurring bills. Current Month exports can be used to suggest possible matches with open bills.
+Bill Assistant reads a bank CSV only after you choose it. Historical DBS/POSB exports help suggest recurring bills; current-month exports can suggest matches for unpaid bills. Other supported CSV imports can add bills, recurring schedules, or history after your review.
 
-CSV content is processed on the device. Oh, My Bills! does not retain the source CSV, raw transaction rows, account numbers, account balances, or personal details. Temporary picker cache copies are deleted after processing on a best-effort basis.
+The app processes the selected CSV on the device and does not intentionally keep the original source file or its unparsed CSV rows as an archive. **Normalized payment and merchant details may be retained in unfinished reviews and matching records**, as described above. The app does not intentionally store full bank account numbers or account balances from these imports in Bill Assistant matching records.
 
-Only bill fields you confirm and privacy-reduced matching metadata may be stored.
+File pickers may first copy selected files into the app's temporary cache. The app attempts to delete app-owned picker copies after processing, including when an import is cancelled or fails. Cleanup is best-effort; device caches and previously created temporary copies may persist until cleaned or reclaimed by the operating system. The app never deliberately deletes the original document you selected.
 
 ## Screenshot scanning
 
-When you select bill or subscription screenshots, text recognition runs on the device using Google ML Kit Text Recognition.
+Selected bill or subscription screenshots are analysed on the device using Google ML Kit Text Recognition. The text-recognition API does not send selected screenshot images or recognized text to Google or an Oh, My Bills! server for recognition. Images and OCR text are used for the review flow rather than intentionally saved as screenshots or OCR transcripts by OMB. Picker-created temporary copies are subject to best-effort local cleanup.
 
-Selected image content and recognized text are processed on the device and are not uploaded to Oh, My Bills! or Google by the text-recognition API.
+The Google ML Kit SDK may separately transmit operational information to Google, such as app and device information, per-installation identifiers, performance, API configuration, input/output sizes, events, or errors. Those operational metrics are distinct from the screenshot content and recognized text. See [ML Kit's Android disclosure](https://developers.google.com/ml-kit/android-data-disclosure) and [iOS disclosure](https://developers.google.com/ml-kit/ios-data-disclosure).
 
-The Google ML Kit SDK may send Google limited operational metrics such as device and application information, a non-user-identifying per-installation identifier, performance and API configuration, input/output sizes, events, and errors. These metrics do not include the selected image or recognized text.
+Screenshots are not proof that a payment has settled. Any suggested bill or payment change requires your review.
 
-A screenshot is treated as bill-entry evidence, not proof that a payment settled.
+## Review and user control
 
-## User control and confirmation
+The app does not automatically mark a bill as paid, settle a payment, create a bill from a bank statement, or change a recurring schedule solely because it found a possible match. You choose whether to add, map, ignore, or otherwise confirm suggested items. You can edit or remove records through the app's available controls.
 
-Bill Assistant suggestions do not change your saved bills by themselves.
-
-For recurring-bill discovery, you can explicitly create a new recurring category, add a new detail under an existing recurring category, map a discovered merchant to an existing detail, or ignore the suggestion. Oh, My Bills! does not automatically merge a discovered merchant into an existing recurring category or detail based only on a fuzzy match.
-
-Oh, My Bills! does not automatically create or update a bill, change an amount, update a recurring template during payment reconciliation, or mark a bill paid. You review and confirm each change.
+You can clear local app data through your device settings or by uninstalling the app, subject to any copies or backups retained separately by the device operating system or your chosen export destination.
 
 ## Notifications
 
-If you enable reminders, the app schedules bill notifications locally through your device operating system. Notification contents and schedules are not sent to an Oh, My Bills! server.
+If you enable bill reminders, OMB schedules local notifications using your device's operating system. Notification content can include a bill name and may be visible on the lock screen depending on your device settings. OMB does not operate a server for delivering these notifications.
 
-## Imports, exports, and sharing
+## Import, export, and sharing
 
-The app accesses files only when you explicitly choose to import or export data.
+Files are accessed when you choose to import or export them. When you export a CSV or PDF, the app may create a temporary local file so your device can pass it to the share sheet or a destination you choose. App-owned temporary copies are kept in operating-system-managed cache where supported; generated print files are cleaned on a best-effort basis when no longer needed. A shared temporary file may remain in cache until the operating system reclaims it, to avoid interrupting the receiving app.
 
-CSV and PDF exports are saved or shared through destinations you choose. Exported files are outside the app's local storage and are governed by the destination you choose.
+If you explicitly save or share an export with another app, a cloud drive, email, messaging service, or another recipient, that destination may receive and store its contents under its own policies. OMB does not select an external recipient or upload financial records to an OMB-operated server.
 
 ## Updates and platform services
 
-The app may contact Expo application-update services to check for and download software updates. Personal and financial bill data is not included in those update requests.
+OMB may contact Expo update services to check for or download software updates, GitHub-hosted release-version information, and Apple or Google platform update services, as applicable. These requests can disclose technical information such as the device's network address and software context to the relevant service; they are not designed to include the user's saved bills or bank transaction records.
 
-Apple, Google, Expo, your operating system, and services you choose when exporting files may process limited technical or account information under their own privacy policies.
+The operating system, distribution stores, and third-party platform SDKs may process limited operational information under their respective policies. This means **offline-first does not mean the app generates no network traffic**. Core financial processing is designed to work offline; app updates and certain external services require connectivity.
 
 ## Financial disclaimer
 
-Oh, My Bills! does not provide financial advice. Cash outlook and survivability calculations are informational projections only.
+The app provides informational financial planning estimates. It does not provide financial or banking advice.
 
 ## Contact
 
-For privacy questions, contact:
-
-support@alwikigai.com
+For privacy questions regarding Oh, My Bills!, contact support@alwikigai.com.
